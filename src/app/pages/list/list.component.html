@@ -1,0 +1,9 @@
+
+<div *ngIf="taskList$ | async as listAsync; else displaySpinner">
+
+    <app-list-item *ngFor=" let listItem of listAsync"   [task]="listItem"></app-list-item>
+
+</div>
+<ng-template #displaySpinner>
+    <mat-spinner></mat-spinner>
+</ng-template>

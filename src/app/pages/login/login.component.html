@@ -1,0 +1,16 @@
+
+<form class="form-content" *ngIf="loginForm" [formGroup]="loginForm" (ngSubmit)="logar()">
+    <mat-form-field appearance="outline">
+    <mat-label>E-mail</mat-label>
+    <input matInput placeholder="Digite seu e-mail" formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+    <mat-label>Password</mat-label>
+    <input type="password" matInput placeholder="Digite sua senha..." formControlName="senha">
+    </mat-form-field>
+
+    <button type="submit" mat-button color="primary">Entrar</button>
+</form>
+  
+

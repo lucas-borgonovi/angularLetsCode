@@ -1,0 +1,9 @@
+.checkBox{
+    padding-right: 10px;
+}
+
+.titleTask{
+    display: flex;
+    align-items: baseline;
+    
+}

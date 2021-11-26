@@ -1,0 +1,28 @@
+<form (ngSubmit)="onSubmit()"  [formGroup]="updateForm" class="formContainer">
+    <mat-form-field appearance="standard">
+        <mat-label>Título da tarefa:</mat-label>
+        <input id="titulo" name="titulo" formControlName="titulo" required matInput placeholder="Digite o nome da tarefa...">
+    </mat-form-field>
+    <mat-form-field  appearance="fill">
+        <mat-label>Descrição</mat-label>
+        <textarea matInput
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="1"
+                  cdkAutosizeMaxRows="5"
+                  formControlName="detalhes"
+                  name="detalhes"></textarea>
+      </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Importância</mat-label>
+        <mat-select name="importancia" required formControlName="importancia">
+          <mat-option value="Alta">Alta</mat-option>
+          <mat-option value="Média">Média</mat-option>
+          <mat-option value="Baixa">Baixa</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div class="botoes">
+        <button mat-button type="submit" color="primary">Cadastrar</button>
+        <button mat-button type="reset" color="warn">Cancelar</button>
+    </div>
+</form>

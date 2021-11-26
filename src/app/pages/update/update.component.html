@@ -1,0 +1,41 @@
+
+    <form (ngSubmit)="updateTask()" [formGroup]="updateForm" class="formContainer">
+
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title class="titleTask">
+                    <!-- <mat-checkbox id="checkBox" [checked]="updateForm.get('realizada')?.value || false"></mat-checkbox> -->
+                    {{updateForm.get('titulo')?.value}}
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-form-field appearance="standard">
+                <mat-label>Título da tarefa:</mat-label>
+                <input id="titulo" formControlName="titulo" required matInput placeholder="Digite o nome da tarefa...">
+            </mat-form-field>
+            <mat-label>Detalhes:</mat-label>
+            <mat-form-field  appearance="fill">
+                <textarea matInput
+                    cdkTextareaAutosize
+                    #autosize="cdkTextareaAutosize"
+                    cdkAutosizeMinRows="1"
+                    cdkAutosizeMaxRows="5"
+                    formControlName="detalhes"></textarea>
+            </mat-form-field>
+    
+            <mat-form-field appearance="fill">
+                <mat-label>Importância</mat-label>
+                <mat-select required formControlName="importancia">
+                    <mat-option value="Alta">Alta</mat-option>
+                    <mat-option value="Média">Média</mat-option>
+                    <mat-option value="Baixa">Baixa</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-button color="orange" type="submit">Atualizar</button>
+            <button mat-button color="warn" type="reset">Cancelar</button>
+        </mat-expansion-panel>
+
+    </form>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false">
+    </mat-expansion-panel>
+
